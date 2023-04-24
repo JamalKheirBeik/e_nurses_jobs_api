@@ -1,0 +1,26 @@
+{
+  "name": "e_nursesjobs",
+  "version": "1.0.0",
+  "description": "online jobs for nurses",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [
+    "nurses",
+    "jobs",
+    "patients",
+    "tasks",
+    "reminder"
+  ],
+  "author": "Jamal Kheir Beik",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0"
+  }
+}
