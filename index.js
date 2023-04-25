@@ -97,7 +97,7 @@ app.post("/getDailyReport", async (req, res) => {
     await client.end();
     res.json({ data: result.rows });
   } catch (e) {
-    res.json({ error: e });
+    res.json({ error: "General error" });
   }
 });
 
