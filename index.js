@@ -19,7 +19,7 @@ const auth = async (req, res, next) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -51,7 +51,7 @@ app.post("/login", async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -83,7 +83,7 @@ app.post("/getDailyReport", async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(`
@@ -118,7 +118,7 @@ app.post("/admin/login", async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -151,7 +151,7 @@ app.post("/admin/add/admin", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -186,7 +186,7 @@ app.post("/admin/add/nurse", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -214,7 +214,7 @@ app.post("/admin/add/patient", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -248,7 +248,7 @@ app.post("/admin/add/caring", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -275,7 +275,7 @@ app.post("/admin/add/caringType", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -315,7 +315,7 @@ app.post("/admin/edit/nurse", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     var query, values;
@@ -355,7 +355,7 @@ app.post("/admin/edit/patient", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -391,7 +391,7 @@ app.post("/admin/edit/caring", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -421,7 +421,7 @@ app.post("/admin/edit/caringType", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(
@@ -487,7 +487,7 @@ app.post("/admin/search", auth, async (req, res) => {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      ssl: true,
+      ssl: { rejectUnauthorized: false },
     });
     await client.connect();
     const result = await client.query(query);
